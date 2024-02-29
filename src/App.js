@@ -6,6 +6,7 @@ class App extends Component {
     super();
     this.state = {
       monsters: [],
+      searchField: ''
     };
     // constructor runs first and initializes state
   }
@@ -27,27 +28,33 @@ class App extends Component {
       )
     );
   }
+
+  onSearchChange = (e) => {
+    const searchField = e.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  }
+
  render() {
   // runs second
   // React notices component 'monsters' changes after the return of .setStates() first argument
   // result: Re-render will occur, runs again (fourth)
+  const { monsters, searchField} = this.state;
+  const { onSearchChange } = this;
+  
+  const filteredMonsters = monsters.filter((monster) => {
+    return monster.name.toLocaleLowerCase().includes(searchField);
+  });
   return(
     <div className='App'>
       <input 
       className='search-box'
       type='search'
       placeholder='search monsters'
-      onChange={(e) => {
-        const searchString = e.target.value.toLocaleLowerCase();
-        const filteredMonsters = this.state.monsters.filter((monster) => {
-          return monster.name.toLocaleLowerCase().includes(searchString);
-        });
-
-        this.setState(() => {
-          return { monsters: filteredMonsters }
-        })
-      }}/>
-      {this.state.monsters.map((monster) => {
+      onChange={ onSearchChange }
+      />
+      {filteredMonsters.map((monster) => {
         return (
           <div key={monster.id}>
             <h1>{monster.name}</h1>
