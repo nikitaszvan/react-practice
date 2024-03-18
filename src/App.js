@@ -1,42 +1,11 @@
 import './App.css';
-// import { Component } from 'react';
-import { useState, useEffect } from 'react';
-import CardList from './components/card-list/card-list.component.jsx';
-import SearchBox from './components/search-box/search-box.component.jsx';
+import LogoNavbar from './components/logo-navbar/logo-navbar.component';
 
 const App = () => {
-  const [ searchField, setSearchField ] = useState('');
-  const [ monsters, setMonsters ] = useState([]);
-  const [ filteredMonsters, setFilteredMonsters ] = useState(monsters);
-
-  useEffect (() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then((users) => setMonsters(users));
-  }, []);
-
-  useEffect (() => {
-    const newFilteredMonsters = monsters.filter((monster) => {
-      return monster.name.toLocaleLowerCase().includes(searchField);
-    });
-    setFilteredMonsters(newFilteredMonsters);
-  }, [monsters, searchField]);
-
-  const onSearchChange = (e) => {
-    setSearchField(e.target.value.toLocaleLowerCase());
-  }
-
-  console.log('rendered');
 
   return (
     <div className='App'>
-      <h1 className="app-title">Monsters Rolodex</h1>
-      <SearchBox
-        className = 'monster-search-box'
-        onSearchHandler = { onSearchChange }
-        placeholder = 'search monsters'
-      />
-      <CardList monsters = { filteredMonsters } />
+      <LogoNavbar />
     </div>
   )
 }
