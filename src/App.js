@@ -1,11 +1,13 @@
 import './App.css';
 import LogoNavbar from './components/logo-navbar/logo-navbar.component';
+import MainLanding from './components/main-landing/main-landing.component';
 
 const App = () => {
 
   return (
     <div className='App'>
       <LogoNavbar />
+      <MainLanding />
     </div>
   )
 }
