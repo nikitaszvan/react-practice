@@ -1,6 +1,8 @@
 import './App.css';
 import LogoNavbar from './components/logo-navbar/logo-navbar.component';
 import MainLanding from './components/main-landing/main-landing.component';
+import MenuSection from './components/menu-section-hom/menu-section-home.component';
+import Visuals from './components/visuals/visuals.component';
 
 const App = () => {
 
@@ -8,6 +10,8 @@ const App = () => {
     <div className='App'>
       <LogoNavbar />
       <MainLanding />
+      <Visuals />
+      <MenuSection />
     </div>
   )
 }

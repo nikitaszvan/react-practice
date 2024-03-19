@@ -3,7 +3,10 @@ import './main-landing.styles.css';
 
 const MainLanding= () => {
   return (
-    <div className='main-image'></div>
+    <div className='main-image'>
+      <div className='gradient-overlay'>
+      </div>
+    </div>
   )
 }
 

@@ -1,7 +1,21 @@
 .main-image {
-  width: 100vw;
+  width: 100%;
   height: 80vh;
   background-image: url("../../assets/holding-pandesal-family.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 30%;
+}
+
+.gradient-overlay {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, white 0%, transparent 10%);
+}
+.gradient-overlay > h3 {
+  text-transform: uppercase;
+  font-family: "Tenali Ramakrishna";
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=main-landing.styles.css.map */
