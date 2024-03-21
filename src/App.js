@@ -1,80 +1,26 @@
 import './App.css';
-import LogoNavbar from './components/logo-navbar/logo-navbar.component';
-import MainLanding from './components/main-landing/main-landing.component';
-import MenuSection from './components/menu-section-hom/menu-section-home.component';
-import Visuals from './components/visuals/visuals.component';
+import LogoNavbar from './components/logo-navbar/logo-navbar.component.jsx';
+import Home from './routes/home/home.route.jsx';
+import Order from './routes/order/order.route.jsx';
+import Faq from './routes/faq/faq.route.jsx';
+import Contact from './routes/contact/contact.route.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
 
   return (
     <div className='App'>
       <LogoNavbar />
-      <MainLanding />
-      <Visuals />
-      <MenuSection />
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/order' element={<Order />}/>
+          <Route path='/faq' element={<Faq />}/>
+          <Route path='/contact' element={<Contact />}/>
+        </Routes>
+        <></>
     </div>
   )
 }
 
 export default App;
 
-// class App extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       monsters: [],
-//       searchField: ''
-//     };
-//     // constructor runs first and initializes state
-//   }
-
-//   componentDidMount() {
-//     // runs third
-//     // componentDidMount is a lifecycle method in React class components that is called after the coponent has been rendered to the DOM
-//     // It is common to use for DOM-interaction tasks or fetching data from API
-//     fetch('https://jsonplaceholder.typicode.com/users')
-//     .then((response) => response.json())
-//     .then((users) =>
-//       this.setState(
-//         ()=> {
-//           return {monsters: users};
-//         }, 
-//         () => {
-//           // console.log(this.state);
-//         }
-//       )
-//     );
-//   }
-
-//   onSearchChange = (e) => {
-//     const searchField = e.target.value.toLocaleLowerCase();
-//     this.setState(() => {
-//       return { searchField };
-//     });
-//   }
-
-//  render() {
-//   // runs second
-//   // React notices component 'monsters' changes after the return of .setStates() first argument
-//   // result: Re-render will occur, runs again (fourth)
-//   const { monsters, searchField} = this.state;
-//   const { onSearchChange } = this;
-  
-//   const filteredMonsters = monsters.filter((monster) => {
-//     return monster.name.toLocaleLowerCase().includes(searchField);
-//   });
-//   return(
-//     <div className='App'>
-//       <h1 className="app-title">Monsters Rolodex</h1>
-//       <SearchBox
-//         className = 'monster-search-box'
-//         onSearchHandler = { onSearchChange }
-//         placeholder = 'search monsters'
-//       />
-//       <CardList monsters = { filteredMonsters } />
-//     </div>
-//   )
-//  }
-// }
-
-// export default App;

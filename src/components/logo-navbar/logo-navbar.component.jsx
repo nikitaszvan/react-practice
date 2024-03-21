@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './logo-navbar.styles.css'
 
 const LogoNavbar = () => {
@@ -7,24 +8,25 @@ const LogoNavbar = () => {
     {
       id: 1,
       title: 'HOME',
-      redirectLink: '#'
+      redirectLink: '/'
     },
     {
       id: 2,
       title: 'ORDER',
-      redirectLink: '#'
+      redirectLink: '/order'
     },
     {
       id: 3,
       title: 'FAQ',
-      redirectLink: '#'
+      redirectLink: '/faq'
     },
     {
       id: 4,
       title: 'CONTACT',
-      redirectLink: '#'
+      redirectLink: '/contact'
     },
   ];
+  console.log('render', new Date());
 
   return (
     <div className='header-container'>
@@ -32,7 +34,7 @@ const LogoNavbar = () => {
       <div className='nav-links-container'>
       {navLinks.map((link)=>{
         return (
-          <a key={link.id} href={link.redirectLink} className='nav-links'>{link.title}</a>
+          <Link to={link.redirectLink} className='nav-links' key={link.id}>{link.title}</Link>
         )
       })}
       </div>
