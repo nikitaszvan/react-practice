@@ -1,0 +1,10 @@
+.social-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon-container > * {
+    font-size: 30px;
+    color: #172601;
+}

@@ -1,5 +1,6 @@
 import './App.css';
 import LogoNavbar from './components/logo-navbar/logo-navbar.component.jsx';
+import Footer from './components/footer/footer.component.jsx';
 import Home from './routes/home/home.route.jsx';
 import Order from './routes/order/order.route.jsx';
 import Faq from './routes/faq/faq.route.jsx';
@@ -17,7 +18,7 @@ const App = () => {
           <Route path='/faq' element={<Faq />}/>
           <Route path='/contact' element={<Contact />}/>
         </Routes>
-        <></>
+      <Footer />
     </div>
   )
 }
