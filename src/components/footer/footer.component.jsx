@@ -4,7 +4,6 @@ import SocialIconContainer from '../social-icon-container/social-icon-container.
 import FooterLinks from '../footer-links/footer-links.component.jsx';
 
 const Footer = () => {
-    const platforms = ['faTwitter', 'faInstagram', 'faFacebook'];
     const links = 
     [
         {
@@ -20,7 +19,7 @@ const Footer = () => {
 
     return (
     <div className="footer-section">
-        <SocialIconContainer platforms = { platforms }/>
+        <SocialIconContainer/>
         <FooterLinks links = { links }/>
         <p className='footer-trademark'></p>
     </div>
